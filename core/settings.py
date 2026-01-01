@@ -22,7 +22,26 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CORS_ALLOWED_ORIGINS = [
+  "http://localhost:5173",
+  "https://captain-aminul-haque-it-institute.vercel.app/"
+]
 
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "https://captain-aminul-haque-it-institute.vercel.app",
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://captain-aminul-haque-it-institute.onrender.com",
+]
+
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+USE_X_FORWARDED_HOST = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -34,10 +53,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     "accounts",
+    "corsheaders",
 ]
 
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -115,3 +136,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
