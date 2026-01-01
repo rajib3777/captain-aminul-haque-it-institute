@@ -24,14 +24,9 @@ ALLOWED_HOSTS = ['*']
 
 CORS_ALLOWED_ORIGINS = [
   "http://localhost:5173",
-  "https://captain-aminul-haque-it-institute.vercel.app/"
+  "https://captain-aminul-haque-it-institute.vercel.app"
 ]
 
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "https://captain-aminul-haque-it-institute.vercel.app",
-]
 
 CORS_ALLOW_CREDENTIALS = True
 
