@@ -49,6 +49,11 @@ INSTALLED_APPS = [
     
     "accounts",
     "corsheaders",
+    "courses",
+    "enrollment",
+    "permissions",
+    "contents",
+
 ]
 
 
